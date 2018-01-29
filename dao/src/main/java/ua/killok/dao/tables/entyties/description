@@ -1,0 +1,1 @@
+All Entities should implement LibEntity marker interface or correct work with generic methods 
