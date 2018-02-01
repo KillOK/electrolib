@@ -4,7 +4,7 @@
 
 <hibernate-mapping>
 
-    <class name="ua.killok.dao.tables.entyties.Book" table="book">
+    <class name="ua.killok.dao.model.entities.Book" table="book">
         <id name="id" column="id" type="int" >
             <generator class="increment" />
         </id>
@@ -14,5 +14,86 @@
         <property name="addingDate" type="java.sql.Date" column="addingDate" />
     </class>
    
+   <class name="ua.killok.dao.model.entities.Article" table="articles">
+        <id name="id" column="id" type="int" ><generator class="increment" /></id>
+        <property name="tile" type="java.lang.String" column="tile" />
+        <property name="text" type="java.lang.String" column="text" />
+        <property name="picture" type="binary" column="picture" />
+        <property name="date" type="java.sql.Date" column="date" />
+        <many-to-one name="author" class="ua.killok.dao.model.entities.User" column="authorid" />
+    </class>
+    
+    <class name="ua.killok.dao.model.entities.Author" table="author">
+        <id name="id" column="id" type="int" >
+            <generator class="increment" />
+        </id>
+        <property name="name" type="java.lang.String" column="name" />
+        <property name="surname" type="java.lang.String" column="surname" />
+        <property name="secondname" type="java.lang.String" column="secondname" />
+        <property name="authorpicture" type="binary" column="authorpicture" />
+    </class>
+    
+     <class name="ua.killok.dao.model.entities.BookContent" table="bookcontent">
+        <id name="id" column="id" type="int" >
+            <generator class="increment" />
+        </id>
+        <property name="fileName" type="java.lang.String" column="filename" />
+        <property name="file" type="binary" column="file" />
+        <many-to-one name="book" class="ua.killok.dao.model.entities.Book" column="bookId" />
+    </class>
+    
+    
+    <class name="ua.killok.dao.model.entities.Genre" table="genre">
+        <id name="id" column="id" type="int" >
+            <generator class="increment" />
+        </id>
+        <property name="name" type="java.lang.String" column="name" />
+    </class>
+    
+    <class name="ua.killok.dao.model.entities.User" table="user">
+        <id name="id" column="id" type="int" >
+            <generator class="increment" />
+        </id>
+        <property name="name" type="java.lang.String" column="name" />
+        <property name="surname" type="java.lang.String" column="surname" />
+        <property name="login" type="java.lang.String" column="login" />
+        <property name="password" type="java.lang.String" column="password" />
+        <property name="picture" type="binary" column="picture" />
+        <property name="email" type="java.lang.String" column="email" />
+    </class>
+   
+   <class name="ua.killok.dao.model.entities.BookAuthorRelationships" table="book_author">
+        <id name="id" column="id" type="int" >
+            <generator class="increment" />
+        </id>
+	   <many-to-one name="book" class="ua.killok.dao.model.entities.Book" column="bookid" />
+	   <many-to-one name="author" class="ua.killok.dao.model.entities.Author" column="authorid" />
+   </class>
+   
+    <class name="ua.killok.dao.model.entities.BookGenreRelationships" table="book_genre">
+        <id name="id" column="id" type="int" >
+            <generator class="increment" />
+        </id>
+	   <many-to-one name="book" class="ua.killok.dao.model.entities.Book" column="bookid" />
+	   <many-to-one name="genre" class="ua.killok.dao.model.entities.Genre" column="genreid" />
+   </class>
    
 </hibernate-mapping>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

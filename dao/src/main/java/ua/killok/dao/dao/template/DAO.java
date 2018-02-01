@@ -2,7 +2,8 @@ package ua.killok.dao.dao.template;
 
 import java.sql.SQLException;
 import java.util.List;
-import ua.killok.dao.tables.models.LibEntity;
+
+import ua.killok.dao.model.interfaces.LibEntity;
 
 /**
  * Generic DAO interface

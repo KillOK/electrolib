@@ -1,4 +1,4 @@
-package ua.killok.dao.tables.entyties;
+package ua.killok.dao.model.entities;
 
 import java.sql.Date;
 
@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import ua.killok.dao.tables.models.LibEntity;
+import ua.killok.dao.model.interfaces.LibEntity;
 
 @Entity
 @Table(name="electro_lib.book")

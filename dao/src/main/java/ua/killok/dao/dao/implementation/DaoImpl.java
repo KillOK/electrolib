@@ -6,7 +6,7 @@ import java.util.List;
 import org.hibernate.Session;
 
 import ua.killok.dao.dao.template.DAO;
-import ua.killok.dao.tables.models.LibEntity;
+import ua.killok.dao.model.interfaces.LibEntity;
 import ua.killok.dao.util.DAOSessionFactory;
 
 public class DaoImpl implements DAO{

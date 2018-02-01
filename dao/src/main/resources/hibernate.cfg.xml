@@ -12,6 +12,6 @@
 		<property name="hibernate.show_sql">true</property>
 
 		<mapping resource="elib.hbm.xml" />
-		<!-- <mapping class="ua.killok.dao.tables.entyties.Book"/> --> 				<!-- JTT -->
+		<!-- <mapping class="ua.killok.dao.tables.entyties.Book"/> --> 				<!-- JustToTry -->
 	</session-factory>
 </hibernate-configuration>

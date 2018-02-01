@@ -4,8 +4,8 @@ import java.sql.SQLException;
 import java.util.List;
 
 import ua.killok.dao.dao.implementation.DaoImpl;
-import ua.killok.dao.tables.entyties.Book;
-import ua.killok.dao.tables.models.LibEntity;
+import ua.killok.dao.model.entities.Book;
+import ua.killok.dao.model.interfaces.LibEntity;
 import ua.killok.dao.util.HibernateUtil;
 /*
  * Jut to try
