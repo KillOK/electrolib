@@ -1,5 +1,7 @@
 package ua.killok.dao.model.entities;
 
+import java.util.Set;
+
 import ua.killok.dao.model.interfaces.LibEntity;
 
 public class Author implements LibEntity{
@@ -10,6 +12,8 @@ public class Author implements LibEntity{
 	private String secondname;
 	private byte[] authorpicture;
 	
+	private Set<Book> books;
+
 	public Author() {}
 	
 	public Author(String name, String surname, String secondname, byte[] authorpicture) {
@@ -48,6 +52,14 @@ public class Author implements LibEntity{
 	}
 	public void setAuthorpicture(byte[] authorpicture) {
 		this.authorpicture = authorpicture;
+	}
+	
+	public Set<Book> getBooks() {
+		return books;
+	}
+	
+	public void setBooks(Set<Book> books) {
+		this.books = books;
 	}
 	
 }

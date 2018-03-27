@@ -1,0 +1,46 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Electro-Lib.ua</title>
+<link href="/web/pages/style/electrolib main style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+	<div class="w-80 pad-10">
+
+		<div class="mainColumn">
+			<div class="logo">
+				<br>
+				<!-- //////////////////Login////////////////// -->
+				<div style="width: 200px; background-color: rgba(255, 255, 255, 0.5); padding: 5px; margin-top:30px; margin-left: auto; margin-right: 1%; border: 1px solid black; border-radius: 5px; ">
+					<form action="../web/" method="post" >
+			                	<!-- текстовые поля ввода -->
+			                <input type="text" placeholder="Логін" name="login" style=" background-color: rgba(255, 255, 255, 0.8); border: 1px solid black; border-radius: 5px; width: 180px;"><br>
+			                <input type="password" placeholder="Пароль" name="pass" style=" background-color: rgba(255, 255, 255, 0.8); border: 1px solid black; border-radius: 5px; width: 180px; margin-top: 2px;"><br>
+			                	<!-- кнопка отправки формы -->
+			                <input type="submit" value="Вхід" style=" border: 1px solid black; border-radius: 5px; margin-top: 2px; width: 180px;">
+			         </form>
+			         
+			         <form action="../reg.jsp" method="post" style="display: inline-block;">
+			                <button style=" border: 1px solid black; border-radius: 5px; margin-top: 2px; width: 72px;">Реєстрація</button><br>
+			         </form>
+			         
+			         <form action="../zabuv.jsp" method="post" style="display: inline-block;">
+			                <button style=" border: 1px solid black; border-radius: 5px; margin-top: 2px; width: 104px;">Забув пароль?</button><br>
+			       	 </form>
+				</div>
+			</div>
+			
+			<div class="mainUnderColumn">
+				
+					<div class="menuColumn">
+						<div class="menuItem" style="border-top-left-radius: 7px;"><a href="/web/"><p>Головна сторінка</p></a></div> 
+						<div class="menuItem"><a href=""><p>Список книг</p></a></div> 
+						<div class="menuItem"><a href=""><p>Про нас</p></a></div>
+						<div class="menuItem"><a href=""><p>FAQ</p></a></div>
+						<div class="menuItem"><a href=""><p>Контактна інформація</p></a></div>
+					
+						<div class="searchBlock"></div>
+					</div>
+				
+				<div class="contentColumn" >
+					<div class="innerContentColumn">

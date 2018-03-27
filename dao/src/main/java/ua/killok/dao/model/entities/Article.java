@@ -7,7 +7,7 @@ import ua.killok.dao.model.interfaces.LibEntity;
 public class Article implements LibEntity{
 	
 	private int id;
-	private String tile ;
+	private String title = null ;
 	private String text ;
 	private byte[] picture;
 	private Date date;
@@ -17,8 +17,8 @@ public class Article implements LibEntity{
 	
 	
 	
-	public Article(String tile, String text, byte[] picture, Date date, User author) {
-		this.tile = tile;
+	public Article(String title, String text, byte[] picture, Date date, User author) {
+		this.title = title;
 		this.text = text;
 		this.picture = picture;
 		this.date = date;
@@ -33,11 +33,11 @@ public class Article implements LibEntity{
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getTile() {
-		return tile;
+	public String getTitle() {
+		return title;
 	}
-	public void setTile(String tile) {
-		this.tile = tile;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 	public String getText() {
 		return text;

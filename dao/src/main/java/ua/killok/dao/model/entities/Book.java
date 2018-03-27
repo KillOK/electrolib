@@ -1,6 +1,7 @@
 package ua.killok.dao.model.entities;
 
 import java.sql.Date;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -28,6 +29,19 @@ public class Book implements LibEntity{
 	@Column(name="addingDate")
 	private Date addingDate;
 	
+	private Set<Author> authors;
+	private Set<Genre> genres;
+	private Set<BookContent> bookContent;
+	
+
+	public Set<BookContent> getBookContent() {
+		return bookContent;
+	}
+
+	public void setBookContent(Set<BookContent> bookContent) {
+		this.bookContent = bookContent;
+	}
+
 	public Book() {}
 	
 	public Book(String name, byte[] picture, String shortDescription, Date addingDate) {
@@ -35,6 +49,14 @@ public class Book implements LibEntity{
 		this.picture = picture;
 		this.shortDescription = shortDescription;
 		this.addingDate = addingDate;
+	}
+
+	public Set<Genre> getGenres() {
+		return genres;
+	}
+
+	public void setGenres(Set<Genre> genres) {
+		this.genres = genres;
 	}
 
 	public int getId() {
@@ -75,6 +97,14 @@ public class Book implements LibEntity{
 
 	public void setAddingDate(Date addingDate) {
 		this.addingDate = addingDate;
+	}
+	
+	public Set<Author> getAuthors() {
+		return authors;
+	}
+	
+	public void setAuthors(Set<Author> authors) {
+		this.authors = authors;
 	}
 	
 	

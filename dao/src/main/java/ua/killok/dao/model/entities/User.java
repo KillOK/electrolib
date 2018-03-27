@@ -1,5 +1,7 @@
 package ua.killok.dao.model.entities;
 
+import java.util.Set;
+
 import ua.killok.dao.model.interfaces.LibEntity;
 
 public class User implements LibEntity{
@@ -11,6 +13,7 @@ public class User implements LibEntity{
 	private String login ;
 	private String password ;
 	private String email ;
+	private Set<Article> articles;
 	
 	public User() {}
 
@@ -77,6 +80,14 @@ public class User implements LibEntity{
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public Set<Article> getArticles() {
+		return articles;
+	}
+
+	public void setArticles(Set<Article> articles) {
+		this.articles = articles;
 	}
 	
 }

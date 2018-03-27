@@ -9,13 +9,44 @@ import ua.killok.dao.dao.template.DAO;
 import ua.killok.dao.model.interfaces.LibEntity;
 import ua.killok.dao.util.DAOSessionFactory;
 
-public class DaoImpl implements DAO{
+/**
+ * 
+ * Use this class if you need more then one DAO object on one page.
+ * This class let you use only one Hibernate session for all objects on your page.
+ *
+ */
+public class MultiDaoImpl implements DAO{
 	
-	/*
-	 * New Hibernate Session creates for every DaoImplObect
+	private  Session session;
+	
+	/**
+	 * @param session - HbernateSession for data management. 
+	 * Use DAOSessionFactory().getSession() to create new session or MultiDaoImpl.getSession() if object with session already exists.
+	 * You must close each session you use after work with object finish.
 	 */
-	private DAOSessionFactory dsf =new DAOSessionFactory();
-	private  Session session =  dsf.getSession();
+	public MultiDaoImpl(Session session) {
+		this.session = session;
+	}
+	
+	/**
+	 * Remember to set or open session or correct work
+	 */
+	public MultiDaoImpl() {}
+	
+	/**
+	 * @return existing hibernateSession for other MultiaoImpl objects
+	 */
+	public Session getSession() {
+		return session;
+	}
+	
+	/**
+	 * @param session - HbernateSession for data management. Use DAOSessionFactory.getSession();
+	 * you should close every used session after work finish
+	 */
+	public void setSession(Session session) {
+		this.session = session;
+	}
 
 	@Override
 	public <T extends LibEntity> void add(T obj) throws SQLException {
@@ -32,7 +63,7 @@ public class DaoImpl implements DAO{
 	}
 
 	@Override
-	public <T extends LibEntity> void delete(T obj) throws SQLException {
+	public <T extends LibEntity> void delete (T obj) throws SQLException {
 		session.beginTransaction();
 		session.delete(obj);
 		session.getTransaction().commit();
@@ -61,14 +92,15 @@ public class DaoImpl implements DAO{
 	/**
 	 * Session management methods
 	 */
-	public void openSession() {
-		closeSession();
-		session = dsf.openSession();
+	public void openNewSession() {
+		session = new DAOSessionFactory().getSession();
 	}
 	
+	/**
+	 * Ensure that other objects don't use current session
+	 */
 	public void closeSession() {
 		if(session!=null&&session.isOpen())session.close();
 	}
 	
 }
-
