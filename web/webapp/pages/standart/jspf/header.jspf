@@ -34,7 +34,7 @@
 				
 					<div class="menuColumn">
 						<div class="menuItem" style="border-top-left-radius: 7px;"><a href="/web/"><p>Головна сторінка</p></a></div> 
-						<div class="menuItem"><a href=""><p>Список книг</p></a></div> 
+						<div class="menuItem"><a href="../web/BookList"><p>Список книг</p></a></div> 
 						<div class="menuItem"><a href=""><p>Про нас</p></a></div>
 						<div class="menuItem"><a href=""><p>FAQ</p></a></div>
 						<div class="menuItem"><a href=""><p>Контактна інформація</p></a></div>
